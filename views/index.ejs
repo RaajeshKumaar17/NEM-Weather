@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function useCurrentLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position){
+                    const lat=position.coords.latitude;
+                    const lon=position.coords.longitude;
+
+                    const form=document.getElementById('weather-form');
+                    const latInput=document.createElement('input');
+                    const lonInput=document.createElement('input');
+                    latInput.type = 'hidden';
+                    lonInput.type = 'hidden';
+                    latInput.name = 'lat';
+                    lonInput.name = 'lon';
+                    latInput.value = lat;
+                    lonInput.value = lon;
+                    form.appendChild(latInput);
+                    form.appendChild(lonInput);
+                    form.submit();
+                },function(error){
+                    alert('geolocation error: '+error.message);
+                });
+            }else{
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+    <h1>Weather App</h1>
+    <form id="weather-form" action="/weather" method="post">
+        <label for="city">Enter City</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+        
+    </form>
+    
+    </div>
+    
+</body>
+</html>
