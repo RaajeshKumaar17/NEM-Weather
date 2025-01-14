@@ -12,4 +12,7 @@ MongoDB for storing user data.
 Easy to deploy and extend.
 
 
-imz
+![Alt text](https://github.com/RaajeshKumaar17/NEM-Weather/blob/f1095c1568154baae70250a35972a0916250b989/login.png)
+
+
+![Alt text](https://github.com/RaajeshKumaar17/NEM-Weather/blob/f1095c1568154baae70250a35972a0916250b989/output.png)
