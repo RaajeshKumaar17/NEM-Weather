@@ -13,7 +13,7 @@ app.set('view engine','ejs')
 dotenv.config();
 app.use(bodyParser.urlencoded({extended:true}));
 
-const connectionString = "mongodb+srv://rock:raajesh3477@cluster0.wo8yk.mongodb.net/<yourDatabaseName>?retryWrites=true&w=majority";
+const connectionString = "mongodb+srv://<username>:<password>@cluster0.wo8yk.mongodb.net/<yourDatabaseName>?retryWrites=true&w=majority";
 
 mongoose.connect(connectionString)
 .then(()=>{
